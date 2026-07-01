@@ -1,27 +1,36 @@
-# BlogV1 — Ekip / Portföy Web Projesi
+# Kişisel Portföy Web Sitesi
 
-Modern web standartlarına uygun olarak tasarlanmış, çoklu yazar desteği ve ASP.NET Core Identity ile kullanıcı yetkilendirmesi içeren kapsamlı bir **.NET 8 MVC Blog ve Portföy yönetim sistemidir.**
+Modern web standartlarına uygun olarak tasarlanmış, kişisel portföy sergileme, proje vitrinleme ve dinamik anasayfa/hero alanı yönetimi sunan kapsamlı bir **.NET 8 MVC Portföy Yönetim Sistemidir.**
 
 ---
 
 ## 🚀 Proje Hakkında
 
-Bu proje, hem zengin bir kullanıcı arayüzü sunmak hem de güvenli ve ölçeklenebilir bir arka plan mimarisi oluşturmak amacıyla **ASP.NET Core MVC (.NET 8)** ile geliştirilmiştir.
+Bu proje, kişisel yetenekleri, projeleri ve deneyimleri profesyonel bir şekilde sergilemek amacıyla **ASP.NET Core MVC (.NET 8)** ile geliştirilmiş bir **kişisel portföy web sitesidir.** Ziyaretçilere etkileyici bir sunum sağlarken, yönetim paneli aracılığıyla içeriklerin kolayca güncellenmesine olanak tanır.
 
-- **Kullanıcı Arayüzü:** İçerik ve portföy sergileme bölümü için [DevFolio](https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/) teması entegre edilmiştir.
+- **Kullanıcı Arayüzü:** Portföy ve proje sergileme bölümü için [DevFolio](https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/) teması entegre edilmiştir.
 - **Yönetim Paneli:** Sağlam ve esnek yönetim süreçleri için [SB Admin 2](https://startbootstrap.com/theme/sb-admin-2) teması kullanılmıştır.
+
+## 🎯 Hedef Kitle & Kullanım Alanları
+
+Bu proje, özellikle aşağıdaki grupların dijital varlıklarını ve profesyonel kimliklerini sergilemeleri için tasarlanmıştır:
+
+- **Yazılımcılar ve Tasarımcılar:** Geliştirdikleri yazılımları, tasarım portföylerini ve teknik yeteneklerini sergilemek isteyenler.
+- **Freelance Çalışanlar:** Hizmetlerini tanıtmak, referans projelerini sunmak ve entegre iletişim formu ile yeni iş teklifleri almak veya iş bağlantıları kurmak isteyenler.
+- **İş Arayanlar ve Yeni Mezunlar:** Statik bir PDF özgeçmiş yerine, dinamik ve kolayca güncellenebilir bir dijital web özgeçmişi (Web CV) oluşturmak isteyenler.
+- **Eğitim ve Referans Arayanlar:** .NET 8, EF Core Code-First ve Identity tabanlı üyelik sistemlerinin entegrasyonunu incelemek isteyen geliştiriciler.
 
 ## ✨ Özellikler
 
 | Özellik | Açıklama |
 |---|---|
-| 📝 Blog Yönetimi | Blog yazıları oluşturma, düzenleme ve silme |
-| 🖼 Proje/Portföy | Proje ekleme, çoklu görsel yükleme ve detay sayfası |
+| 🖼 Proje Vitrini | Projelerinizi çoklu görsel desteğiyle sergileme ve detay sayfaları |
+| 🧩 Hakkımda Sayfası | Dinamik olarak yönetilebilen kişisel tanıtım içeriği |
+| 💡 Yetenek (Skill) Yönetimi | Beceri ve yetkinliklerinizi görsel olarak sunma |
+| 🏠 Anasayfa (Hero) Yönetimi | Anasayfadaki karşılama başlığı, hareketli unvan metinleri ve arka plan görselinin yönetimi |
+| 📬 İletişim Formu | Ziyaretçilerin sizinle doğrudan iletişime geçmesi |
 | 👤 Kullanıcı Hesapları | Kayıt, giriş ve profil yönetimi (Identity) |
 | 🔐 Admin Paneli | Rol tabanlı erişim kontrolü ile yönetim arayüzü |
-| 📬 İletişim Formu | Ziyaretçilerin mesaj göndermesi ve admin panelinden takibi |
-| 🧩 Hakkımda Sayfası | Dinamik olarak yönetilebilen hakkımda içeriği |
-| 💡 Yetenek (Skill) Yönetimi | Beceri ve yetkinliklerin yönetilmesi |
 | 🔗 SEO Dostu URL'ler | SlugHelper ile otomatik URL oluşturma |
 | 📦 ViewComponents | Tekrar kullanılabilir arayüz bileşenleri |
 
@@ -118,8 +127,8 @@ Projeyi çalıştırmadan önce aşağıdaki araçların yüklü olduğundan emi
 
 1. **Repoyu klonlayın:**
    ```bash
-   git clone https://github.com/kullanici-adiniz/blogv1.git
-   cd blogv1
+   git clone https://github.com/guneydogukan/Blog-Portfolio.git
+   cd Blog-Portfolio
    ```
 
 2. **Bağımlılıkları yükleyin:**
@@ -168,13 +177,13 @@ Projede kullanılan temel varlıklar (Entity):
 | Model | Açıklama |
 |---|---|
 | `About` | Hakkımda sayfası içeriği |
-| `Blog` | Blog yazıları |
-| `Contact` | İletişim bilgileri |
-| `Details` | Detay sayfası verileri |
-| `Message` | Ziyaretçi mesajları |
 | `Projects` | Portföy projeleri |
 | `ProjectImages` | Projelere ait görseller |
 | `Skill` | Yetenek/beceri tanımları |
+| `Blog` | Anasayfa (Hero) karşılama bilgileri (İsim, Unvan/Açıklama, Arka Plan Görseli) |
+| `Contact` | İletişim bilgileri |
+| `Details` | Detay sayfası verileri |
+| `Message` | Ziyaretçi mesajları |
 | `Entity` | Ortak taban model (Base Entity) |
 
 ## 🔒 Güvenlik Notları
