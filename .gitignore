@@ -1,0 +1,23 @@
+# .NET Core MVC Projesi İçin Önerilen .gitignore Dosyası
+
+# .NET / Visual Studio
+.vs/
+[Oo]bj/
+[Bb]in/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE / Editörler
+.vscode/
+
+# Çevresel Değişkenler
+appsettings.Development.json
+appsettings.Production.json
+.env
+
+# Çeşitli
+*.log
+Thumbs.db
+.DS_Store

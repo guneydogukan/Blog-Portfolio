@@ -1,0 +1,59 @@
+﻿@using BLOGV1.Models
+@model Blog
+
+@{
+    ViewData["Title"] = "Homepage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Homepage</h1>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <div>
+            <h6 class="m-0 font-weight-bold text-primary">HOMEPAGE INFORMATION</h6>
+        </div>
+
+        <a asp-controller="Homepage"
+           asp-action="Edit"
+           asp-route-id="@Model?.Id"
+           class="btn btn-primary btn-sm">
+            <i class="fas fa-edit fa-sm text-white-50"></i> Edit Blog
+        </a>
+    </div>
+
+    <div class="card-body">
+        @if (Model != null)
+        {
+            <div class="row gy-4">
+
+                <div class="col-md-6">
+
+                    <div class="row justify-content-between gy-4 mb-4">
+                        <div class="col-lg-5">
+                            <img src="@Model.ImageUrl"
+                                 class="img-fluid rounded shadow-sm"
+                                 style="object-fit:cover; max-height:260px;"
+                                 alt="@Model.Name" />
+                        </div>
+
+                        <div class="col-lg-7 about-info">
+                            <p><strong>Name: </strong> <span>@Model.Name</span></p>
+                            <p><strong>Profession: </strong> <span>@Model.Description</span></p>                            
+                        </div>
+                    </div>
+                </div>
+
+            
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info mb-0">
+                Şu anda görüntülenecek bir About kaydı bulunmamaktadır.
+            </div>
+        }
+    </div>
+</div>
+

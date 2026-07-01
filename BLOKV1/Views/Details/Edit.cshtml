@@ -1,0 +1,83 @@
+﻿@using BLOGV1.Models
+@model Details
+@{
+    ViewData["Title"] = "Proje Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <input type="hidden" asp-for="Id" />
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Proje Güncelle </div>
+            <div class="card-category"></div>
+        </div>
+        <div class="card-body">
+            <div class="form">
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Category :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="text" class="form-control" asp-for="Category" />
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Project Description :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <textarea class="form-control" rows="3" asp-for="ProjectDescriptions"></textarea>
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Client :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="text" asp-for="Client" class="form-control " />
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Project Date :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="date" asp-for="ProjectDate" class="form-control " />
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Project URL :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="text" asp-for="ProjectUrl" class="form-control " />
+                    </div>
+                </div>
+
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Images :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="file" multiple name="ImageFile" class="form-control " />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="form">
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <button id="displayNotif" class="btn btn-success">Kaydet</button>
+                        <a href="/Projects/" class="btn btn-primary">Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

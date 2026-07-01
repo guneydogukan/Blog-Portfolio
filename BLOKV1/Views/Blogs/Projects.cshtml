@@ -1,0 +1,43 @@
+﻿@using BLOGV1.Models
+@model List<Projects>
+<section id="projects" class="section projects-dark">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title-dark mb-4">
+            <h2>PROJECTS</h2>
+            <p>Selections from the web applications, integration services and enterprise software projects I have implemented.</p>
+        </div>
+
+        
+        <div class="row gx-4 gy-4">
+            @foreach(var item in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card bg-white border-secondary shadow-sm h-100">
+
+                        <img src="@item.ProjectImageUrl"
+                             class="card-img-top w-100"
+                             style="height:200px; object-fit:cover;"
+                             alt="Proje Görseli">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-dark fw-bold">@item.ProjectName</h5>
+                            <p class="card-text text-secondary">
+                                @item.Description
+                            </p>
+                        </div>
+
+                        <div class="card-footer bg-transparent border-secondary d-flex justify-content-between align-items-center">
+                            <p class="mb-0 small text-secondary">@item.footer</p>
+                            <a asp-controller="Blogs" asp-action="Details" asp-route-slug="@item.Slug" class="btn btn-outline-dark btn-sm fw-semibold">
+                                Details
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>

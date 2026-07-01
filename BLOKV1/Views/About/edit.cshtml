@@ -1,0 +1,83 @@
+﻿@using BLOGV1.Models
+@model About
+@{
+    ViewData["Title"] = "About Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <input type="hidden" asp-for="Id" />
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">About Güncelle </div>
+            <div class="card-category"></div>
+        </div>
+        <div class="card-body">
+            <div class="form">
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Name :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="text" class="form-control" asp-for="Name" />
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Profession :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="mul" class="form-control" asp-for="Profession" />
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>About Me :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <textarea class="form-control" rows="4" asp-for="AboutMe"></textarea>
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Phone :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <textarea class="form-control" rows="3" asp-for="Phone"></textarea>
+                    </div>
+                </div>
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>Email :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="email" asp-for="Email" class="form-control " />
+                    </div>
+                </div>
+
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 text-right">
+                        <label>ProfileImage :</label>
+                    </div>
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <input type="file" name="ImageFile" class="form-control " />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="form">
+                <div class="form-group from-show-notify row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    </div>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <button id="displayNotif" class="btn btn-success">Kaydet</button>
+                        <a href="/About/" class="btn btn-primary">Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

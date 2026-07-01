@@ -1,0 +1,107 @@
+﻿@using BLOGV1.Models
+@model Contact 
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Sayfa Başlığı -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Contact</h1>
+</div>
+
+<!-- Ana Kart -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <div>
+            <h6 class="m-0 font-weight-bold text-primary">CONTACT INFORMATION</h6>
+        </div>
+
+        <a asp-controller="Contact"
+           asp-action="Edit"
+           asp-route-id="@Model?.Id"
+           class="btn btn-primary btn-sm">
+            <i class="fas fa-edit fa-sm text-white-50"></i> Edit Contact
+        </a>
+    </div>
+
+    <div class="card-body">
+        @if (Model != null)
+        {
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <h3 class="mb-4">Contact</h3>
+
+                    <!-- Phone -->
+                    <div class="mb-4 d-flex">
+                        <div class="mr-3">
+                            <i class="fas fa-phone fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1 font-weight-bold">Phone</h6>
+                            <p class="mb-0 text-secondary">@Model.Phone</p>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="mb-4 d-flex">
+                        <div class="mr-3">
+                            <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1 font-weight-bold">Address</h6>
+                            <p class="mb-0 text-secondary">@Model.Address</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mb-2 d-flex">
+                        <div class="mr-3">
+                            <i class="fas fa-share-alt fa-lg text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-2 font-weight-bold">Sosyal Medya</h6>
+
+                            <ul class="list-unstyled mb-0">
+                                @* Instagram *@
+                                @if (!string.IsNullOrWhiteSpace(Model.Instagram))
+                                {
+                                    <li class="mb-1">
+                                        <i class="fab fa-instagram mr-1 text-primary"></i>
+                                        <a href="@Model.Instagram" target="_blank">@Model.Instagram</a>
+                                    </li>
+                                }
+
+                                @* X (Twitter) *@
+                                @if (!string.IsNullOrWhiteSpace(Model.Twitter))
+                                {
+                                    <li class="mb-1">
+                                        <i class="fab fa-twitter mr-1 text-primary"></i>
+                                        <a href="@Model.Twitter" target="_blank">X (Twitter)</a>
+                                    </li>
+                                }
+
+                                @* LinkedIn *@
+                                @if (!string.IsNullOrWhiteSpace(Model.LinkedIn))
+                                {
+                                    <li class="mb-1">
+                                        <i class="fab fa-linkedin mr-1 text-primary"></i>
+                                        <a href="@Model.LinkedIn" target="_blank">LinkedIn</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info mb-0">
+                Şu anda görüntülenecek bir Contact kaydı bulunmamaktadır.
+            </div>
+        }
+    </div>
+</div>
